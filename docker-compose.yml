@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  video-studio:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - APP_PASSWORD=${APP_PASSWORD}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - NOTEBOOKLM_AUTH_JSON=${NOTEBOOKLM_AUTH_JSON}
+      - NOTEBOOKLM_HOME=/tmp/notebooklm
+    volumes:
+      - video_data:/tmp/nblm_batch_
+    restart: unless-stopped
+
+volumes:
+  video_data:

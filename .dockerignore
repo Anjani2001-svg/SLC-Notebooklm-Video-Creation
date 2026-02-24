@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.env
+auth_export.txt
+*.zip
+.git
+README.md
+export_auth.py
